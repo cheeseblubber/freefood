@@ -3,10 +3,7 @@ App.Routers.AppRouter = Backbone.Router.extend({
 		"": "eventsIndex"
 	},
 	eventsIndex: function () {
-		App.Collections.events.fetch({
-			success: function () {
-			},}
-		);
+
 		var indexView = new App.Views.EventsIndex({
 			collection: App.Collections.events
 		})
