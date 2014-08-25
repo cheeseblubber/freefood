@@ -12,5 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underescore
+//= require backbone
+//= require freefood
 //= require turbolinks
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ../templates
+//= require_tree ./views
+//= require_tree ./routers
 //= require_tree .
