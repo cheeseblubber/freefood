@@ -5,7 +5,12 @@ window.App = {
 	Views: {},
 	
 	initialize: function () {
-		new App.Router.AppRouter();
+		App.Collections.events.fetch()
+		new App.Routers.AppRouter();
+		// App.Collections.events.fetch({
+		// 	success: function () {
+		// 	},}
+		// );
 		Backbone.history.start();
 	}
 }

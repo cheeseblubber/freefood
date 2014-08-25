@@ -3,11 +3,15 @@ App.Routers.AppRouter = Backbone.Router.extend({
 		"": "eventsIndex"
 	},
 	eventsIndex: function () {
-		App.Collections.events.fetch();
+		App.Collections.events.fetch({
+			success: function () {
+			},}
+		);
 		var indexView = new App.Views.EventsIndex({
-			collection App.Collections.todos
+			collection: App.Collections.events
 		})
 		this._swapView(indexView);
+
 	},
 	
 	_swapView: function (newView) {
