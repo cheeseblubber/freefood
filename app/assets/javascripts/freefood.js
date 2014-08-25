@@ -5,7 +5,8 @@ window.App = {
 	Views: {},
 	
 	initialize: function () {
-		new APp.Router.AppRouter();
+		new App.Router.AppRouter();
 		Backbone.history.start();
 	}
 }
+$(App.initialize);
