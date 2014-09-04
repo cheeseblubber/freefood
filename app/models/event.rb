@@ -14,8 +14,5 @@
 class Event < ActiveRecord::Base
 
   validates :name, :longitude, :latitude, presence: true
-  
-  
-  def events_near_me
-  end 
+
 end

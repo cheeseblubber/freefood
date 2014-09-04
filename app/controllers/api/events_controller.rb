@@ -10,18 +10,31 @@ class Api::EventsController < ApplicationController
     end
 
     def create
-      # @event =
+      @event = Event.new(event_params)
+      if @event.save
+        render json: @event
+      else
+        render json: { errors: @event.errors.full_messages }, status 422
+      end
     end
 
     def update
+      @event = Event.find(params[:id])
+      if @event.update_attribute(event_params)
+        render json: @event
+      else
+        render json: { errors: @event.errors.full_messages }, status 422
+      end
     end
 
     def destroy
+      Event.find(params[:id]).try(:destroy)
+      render json: nil
     end
 
     private 
     
-    def events_params
+    def event_params
       params.require(:event).permit(:name, :longitude, :latitude)
     end
 end
