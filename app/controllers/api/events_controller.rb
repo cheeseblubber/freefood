@@ -14,16 +14,16 @@ class Api::EventsController < ApplicationController
       if @event.save
         render json: @event
       else
-        render json: { errors: @event.errors.full_messages }, status 422
+        render json: { errors: @event.errors.full_messages }, status: 422
       end
     end
 
     def update
       @event = Event.find(params[:id])
-      if @event.update_attribute(event_params)
+      if @event.update_attributes(event_params[:id])
         render json: @event
       else
-        render json: { errors: @event.errors.full_messages }, status 422
+        render json: { errors: @event.errors.full_messages }, status: 422
       end
     end
 
